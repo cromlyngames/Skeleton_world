@@ -1,0 +1,381 @@
+\documentclass{tufte-handout}
+
+\title{An example of world and game making for Powered By the Apocalypse\thanks{Inspired by the mourned SimpleWorld of Avery Alder}}
+
+\author[Cromlyn Games]{Cromlyn Games}
+
+%\date{28 March 2010} % without \date command, current date is supplied
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{lipsum}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent
+This document describes some ways to make  a Powered By the Apocalypse game.
+It should support reskins, GM's looking for setting ideas, and help building a custom class.
+It also supports deep hacks that play with the fundamentals of the game.
+\end{abstract}
+
+%\printclassoptions
+There's three ways to use this document. One is around a table and build the game the table wants to play together. Another is to pick and choose bits from it to help you explore an idea. I like to pick randomly at each stage, forcing just the right amount of constraints that there can only be one solution for each thing from stat to archetype to individual move, taking me outside where I can get normally.
+
+\section{Size}
+Choose one:\\
+Tight game: one themed additional mechanic\footnote{An example is Apocalypse World, which ties everything to destruction} \\
+Balanced tension game: two themed additional mechanics\footnote{An example is Urban Shadows, which introduces Debts and Corruption}\\
+Focused big game: one themed additional mechanic, second theme present as a stat.\footnote{An example is the Sprawl, which adds synth as a stat for cyberwear}\\
+
+
+You need a fast, nuanced strong hit / weak hit / fail generator\footnote{The standard method is two six- sided dice with margins set at -6, 7-9 and 10+. This can be easily mapped to other types of dice. Cards are slower but can work. Dream Askew used tokens. I'm intrigued by rock/paper/scissors but there are game flow implications}
+ and a theme and a genre. This will give you an Agenda and Principles. These will give you GM moves. 
+
+Choose at least two and normally four or five:
+Stats, Basic Moves, Playbooks, Development, Scenario Moves, Inserts, Tags.
+
+\section{Genre}
+What genre (or mashup) do you all want to play in?
+You may know, if not pick one or two from each below:
+\begin{multicols}{3}
+ancient legends\\
+high fantasy\\
+low fantasy\\
+grim fantasy\\
+age of sail\\
+medieaval\\
+pike and musket\\
+steampunk\\
+victorina\\
+colonial\\
+1920s pulp\\
+superhero comic\\
+weird world war\\
+biopunk\\
+cold war\\
+diesel punk\\
+urban fantasy\\
+slice-of-life\\
+alternate history\\
+dystopia\\
+hard sci fi\\
+solarpunk\\
+cyberpunk\\
+post-apocalypse\\
+space opera\\
+\end{multicols}
+
+\subsection{(Optional) Party is}
+\begin{multicols}{3}
+circus\\
+first responders\\
+mercenaries\\
+city gaurds\\
+criminal gang\\
+merchant convoy\\
+monster hunters\\
+smugglers\\
+traders\\
+investigators\\
+boarding school\\
+university dept\\
+neighbours\\
+village\\
+operatives\\
+rebels\\
+police\\
+refugees\\
+outsiders\\
+beaureucrats\\
+\end{multicols}
+
+\section{Theme}
+What feeling or thing is this game about?
+Choose one or two, eg
+"What would you do for X"
+or
+"Is X more important then Y?"
+
+\begin{multicols}{3}
+balance\\
+belief\\
+change\\
+comfort\\
+destruction \\
+corruption\\
+family \\
+freedom\\
+friendship\\
+glory\\
+honour\\
+hunger\\
+justice\\
+knowledge \\
+law/tradition\\
+love\\
+pain\\
+revenge\\
+unity\\
+survival\\
+violence\\
+wealth\\
+.......\\
+.......\\
+\end{multicols}
+
+\section{Stats}
+Aim for the fewest number you need. Keep them simple, memorable, and immeadetly highlting the difference in how different characters approach challenges. A good example is Versed, Young, Gendered, Wyrd from Sagas of the Icelanders.
+
+Choose one set and rename for your genre, or mix and match:\\
+
+Fighter, Thief, Wizard\\
+Social Circles, Danger Triangles, True Squares, Stitched Crosses \\
+Assertive, Persuasive, Curious, Methodical, Confident\footnote{this one is loosely based on the Big Five Personality model}\\
+
+Or choose them by Genre, either on skills, common environments or to support basic skills you expect all players to need:\\ 
+
+Space, Robots, Lasers,  Feelings\\
+Honour, Rice, Ki\\
+Fate, Power, Control \\
+
+\subsection{If no stats}
+If you not having stats, there's three ways to  handle it\\
+1. Just roll and rely on the nature of the moves for variety.\\
+2. Mark each move for basic/good/advanced. Basically treat each move as it's own stat, similar to a skill based game engine. Example  {Exo-adventurers or the John Harper hack that isn't called Blades in the Portals}\\
+3. Use ephemeral stats like Roll+bodies searched or Roll+Hands free. Be careful with this. If it is going to be tracked from scene to scene (like number of eyes) just make it a stat.
+
+\section{Basic Moves}
+Ideally start players with seven or less moves to track. I tend to split it five basic, two playbook. I tend to have one basic move per stat. The core of a basic move should be "Take thematic action"\footnote{EG Apocalyse World "Open your brain" to the maelstrom to shift the status quo, while Urban Shadows has you "let it out", risking probable corruption in return for supernatural power}. Examples of thematic basic moves are offered in the Theme deconstruction sections.
+All Basic moves should be thematic. They should also support play. Often a player character will want a genre (not generic) version of:\\
+a. Get information\\
+b. Persuade/seduce\\
+c. Help/Interfere with another player\\
+d. Buy/get things\\
+e. Mortal peril \footnote{well, they might not want it, but they may need it}\\
+
+\subsection{Get information}
+This is often in the format of roll+stat and get hold, spend hold to ask questions. The use of hold allows players to develop lines of enquiry as more information becomes available in the scene, rather then the distraction of forcing rerolling many times. 
+The questions available to be asked are often listed and the choice of what can be asked is important, it tells the player what their character thinks is important about the genre. The Sprawl, which is mission based cyber-punk, has "Read A Situation", Urban Shadows (political urban fantasy) has "Figure Someone Out".
+Players will act on the information they get. If you make them ask thematic questions they often end up taking thematic action.
+
+\subsection{Persuade/Seduce}
+The challenge with this move is  balancing the requirements of the genre/theme (in a Noir game, the Femme Fatale must be able to manipulate the other archetypes) and , zooming out a little, balance the social contract of the table and the expectation that players have of their own agency. Storytellers might be happy to sacrifice character agency in return for the ability to add plot twists or elements of world building. Actors might be happy to give up all power outside their character's eyes, but will hate anything that intrudes on the territory that they do control.
+
+There are a few options:\\
+1) Make the move apply to NPCs only. Get players to negotiate if their characters act on each other. This is only going to be ok in games where the player characters are supposed to be aligned teamworkers and where persuasion isn't a big thing in genre, like Fellowship. \\
+2) Make two moves, one for manipulating NPCs and one for manipulating PCs. This is typically set as a standard move for NPCs and offers an extra carrot/stick for PC players to go along with your plan. This can work well for cinematic games where the player may want to get their character into thematic trouble.The Regiment has a move called "Impose Will" which uses only stick, but who the hell plays an Army themed game and doesn't expect to need to take orders?\\
+3) Make one move, ignore PC agency. This will earn you some hate-mail, but works well in games where players have other ways to influence the story then just their player actions. 
+
+\subsection{Help/Interfere with another player}
+The basic form is "When you help someone or hinder them, roll your relationship stat with that person. On a 10+ add or subtract 2 from their roll. On a 7-9, the MC will name a cost, if you accept this cost, then add or subtract two from their roll.
+
+The exact nature of the relationship stat shifts between games, normally plugging into other mechanics. In Apocalypse World the Hx stat is constantly changing and is a source of character advancement. In the Sprawl the Links stat is mostly static, but sets up the initial threat clocks of different mega-corps. In Urban Shadows it is faction based, but also driven by the powerful Debt moves.
+
+In a PBTA game, I think it is best to avoid allowing players to 'defend' against each other by making opposing rolls. It makes the format of moves break down and some complex snarls in the fiction to develop which distract from moving the story forwards. It's like the tennis ball hitting the net instead of being passed back and forth in a volley.
+
+\subsection{Buy/get things}
+I have included it here, because most PBTA rulebooks do address it, but as story driven themed games, shopping and equipment and gear tends to be of secondary importance. Examples of thematically addressing it are The Sprawl's move for getting additional cyberware installed where you have to choose between dangerous back alley docs or villanous megacorps. 
+Apocalypse World has a barter move to cover sourcing 'some particular thing where it's not obvious you should be able to go buy it just like that", as a way to convey the Scarcity theme of the world, but allowing the players to perhaps drive the story further than a blanket 'no'. 
+Both moves are all about giving players what they want, perhaps at a cost, and giving the GM some more hooks or levers to pull.
+
+\subsection{Mortal Peril}
+There are two branches to this move. The first is a catch-all "Take action under pressure" move that can be the main point of weakness in a game if the GM is forced to rely on it too much. 
+The second is the move that kicks in should a player character actually die. It tends not to be something that comes up often in pbta games but when it does it should be important to the story, and the rules often support a gm making a big deal of it. Urban Shadows gives each playbook it's own 'in case of death' move. 
+The common basic move allows you to choose between take a permanent hit to you character, normally to a stat, to come back or choose a new playbook. 
+
+\section{Agenda}
+The GM Agenda is: 
+
+\section{GM Principles}
+sprinkle evocative details everywhere 
+make the world seem real
+name everyone, make everyone human
+build a bigger world through play
+create interesting dilemmas not interesting plots
+address yourself to the characters not players
+be a fan of the players characters 
+make your move but misdirect
+make your move, but never speak its name
+ask provocative questions and build on the answers 
+sometimes, reflect a question back upon the players 
+Think off screen too
++ Additional from the theme (see Theme Deconstruction section)
+
+
+\section{GM moves}
+give them a difficult decision to make
+tell them the possible consequences and ask
+Use a front or threat move
+Offer an opportunity, with or without a cost
+Turn a failed move back on them
+Offer Stuff that's painfully expensive but good
+Put the spotlight on someone
+seperate them
+Put them together 
+make thier lives complicated now
+use up their resources 
+activate stuff's bad side
++ Additional from the theme (see Theme Deconstruction section)
+
+
+\section{Playbooks}
+\section{ Development}
+\section{Scenario Moves}
+\section{Inserts}
+\section{Tags}.
+
+\section{Theme Deconstruction}
+
+\subsection{balance}
++ GM Principle: meaningful player character decisions shift the balance
++ GM Move: Worst imbalance reduces but new imbalance develops.	
+Possible mechanic: split playbook experience and moves into balance/imbalance tracks
+
+\subsection{belief}
++ GM Principle: not all belief is true. sometimes the players are right
++ GM Move trade loss for benefit (in accordance with belief)
++ Possible mechanic: ritual elements to reinforce character will or add details to world
+
+\subsection{change}
++ GM Principle: What has changed since the player's last visited. What hasn't?	
++ GM Move: Change one constraint on the situation, people or landscape
++ Possible Mechanic: push your luck for directed change of landscape or yourself ?
+
+\subsection{comfort}
++ GM Principle: agree with players what comfort means. check in occasionally.
++GM Move: Throw a feast, party or concert
++ Possible Mechanic: meet npcs comfort level to gain ally
+
+\subsection{destruction }
++ GM Principle: First consider destroying npcs and your MC ideas	
++ GM Move: "trade harm for harm (as established) or deal harm (as established)"	
++ Possible mechanic: Detailed harm tags (messy, knockback, seige ect)
+
+
+\subsection{corruption}
++GM Principle: corruption requires the player's character to feel guilt over their actions	
++GM Move:  offer a conflict of interest. both good	
++ Possible Mechanic: Corruption moves that can be activated on a spefific trigger
+
+\subsection{family}
++GM Principle: every parent was once a child
++GM Move: 	announce a flashback
++ Possible Mechanic: 	inheritance of soft moves
+
+\subsection{freedom}
++GM Principle:  There is always another place to run to
++GM Move:  ask a silent player to describe location ahead.
++ Possible Mechanic: expansion of vehicles into mobile bases 
+
+\subsection{friendship}
++GM Principle: friendship spreads through interlocking circles cemented by favours
++GM Move: an npc calls in a favour. reputation cost to say no 
++ Possible Mechanic: do favours, receive debts. call in for favours
+		
+\subsection{glory}
++GM Principle: wherever they go, PCs should hear of great adventurers. sometimes, it might even be them
++GM Move: create a competition for the players
++ Possible Mechanic: gained by beating more difficult challenges and spent to create more difficult challenges  
+
+\subsection{honour}
++GM Principle: always ask if an npc action is honourable. justify it
++GM Move: deal harm to players honour, justified or sneaky
++ Possible Mechanic: honour only applies to certain ranks. it means that oaths carry weight but only for those ranks.
+
+\subsection{hunger}
++GM Principle:  always describe food, fatness, health first
++GM Move:   reveal an upcoming scarcity
++ Possible Mechanic: needs and consequences tag system
+
+\subsection{justice}
++GM Principle: What typifies this situation: the scales, the blindfold or the sword?	
++GM Move: trade judgemet, compassion or violence (as established)
++ Possible Mechanic: ask the abyss "is this just?" Mark bonuses at end of session 
+
+\subsection{knowledge }
++GM Principle: knowledge is the lever that player characters can use to magnify their actions	
++GM Move: trade knowledge for knowledge (as established)
++ Possible Mechanic: cash in knowledge for bonuses on quadratic scale
+
+\subsection{law/tradition}
++GM Principle: everybody, everything has a couple of freely known behaviours
++GM Move: Invoke tradition to create a new threat
++ Possible Mechanic: two polar stats to make quadrant block between four traditions. 
+
+\subsection{love}
++GM Principle:  love is steadily rising level of intimacy
++GM Move: spotlight a connection or triangle
++ Possible Mechanic: intimacy moves: 	 "i'd like to X, may I?", "yes but"
+
+\subsection{pain}
++GM Principle: Scars are not just physical. Damage is not just permanent
++GM Move: deal pain, as established
++ Possible Mechanic: memory/pain as addiction 
+
+\subsection{revenge}
+
++GM Principle: NPCs will always be avenged by someone
++GM Move:  offer vendetta, offer ritual peace at cost
++ Possible Mechanic: detailed followers and bonds rules. fail to avenge one, loose others due to disgrace.
+
+\subsection{unity}
++GM Principle: always introduce someone by their unit/faction/clan before any other detail	
++GM Move: create player-npc-unit triangle over a resource 	
++ Possible Mechanic: Faction tags on all players and NPcs that can be used as PC move triggers
+
+
+\subsection{survival}
++GM Principle: respond with fuckery and intermittent rewards
++GM Move:  offer something, but make them roll the dice
++ Possible Mechanic: Crafting guidelines for making better stuff from crappy parts
+
+\subsection{violence}
++GM Principle: Sometimes the direct solution is the correct one
++GM Move: 	add violence not directed at pcs
++ Possible Mechanic: conflict escalation mechanic. disagreement to posturing to threats to violence 
+
+\subsection{wealth}
++GM Principle: currency is liquid. where does it flow?
++GM Move: replace a source of wealth with another	
++ possible Mechanic: investment schemes as missions 
+
+
+\section{Page Layout}\label{sec:page-layout}
+\subsection{Headings}\label{sec:headings}
+This style provides \textsc{a}- and \textsc{b}-heads (that is,
+\Verb|\section| and \Verb|\subsection|), demonstrated above.
+
+The Tufte-\LaTeX\ classes will emit an error if you try to use
+\linebreak\Verb|\subsubsection| and smaller headings.
+
+% let's start a new thought -- a new section
+\newthought{In his later books},\cite{Tufte2006} Tufte
+
+\bibliography{Skeleton_world}
+\bibliographystyle{plainnat}
+
+
+
+\end{document}
