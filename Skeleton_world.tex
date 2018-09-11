@@ -1,6 +1,6 @@
 \documentclass{tufte-handout}
 
-\title{An example of world and game making for Powered By the Apocalypse\thanks{Inspired by the mourned SimpleWorld of Avery Alder}}
+\title{An example of world and game making for Powered By the Apocalypse\thanks{Inspired by the amazing SimpleWorld of Avery Alder}}
 
 \author[Cromlyn Games]{Cromlyn Games}
 
@@ -18,6 +18,15 @@
 \usepackage{lipsum}   % filler text
 \usepackage{fancyvrb} % extended verbatim environments
   \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+%for fancy lists
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+\newcommand{\mylist}{\tikz[overlay]\draw(-.2,-.2)--(-.2,.4) [path fading=east](-.2,.15)--(.1,.15);} %adds the |- shape to the start of each list item
+\newcommand{\mylistend}{\tikz[overlay]\draw(-.2,.15)--(-.2,.4) [path fading=east](-.2,.15)--(.1,.15);} %adds the |- shape to the start of each list item
+\newcommand{\myitem}{\item[\mylist]} %defines the scope of the mylist command to be 2nd level sublists
+\newcommand{\myitemend}{\item[\mylistend]} %defines the scope of the mylist command to be 2nd level sublists
+
 
 % Standardize command font styles and environments
 \newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
@@ -211,47 +220,97 @@ The second branch is the move that kicks in should a player character actually d
 The common basic move for 'running out of health' allows you to choose between taking a new character, changing playbook or taking a permanent hit to your character ( normally a stat reduction). 
 
 \section{Agenda}
-The GM Agenda is: 
+The GM Agenda is always:
+
+\begin{itemize}
+\item Play to find out what happens
+\item Don't waste your players time
+\item Deliver the world according to the genre setting
+\item Deliver action in line with the theme
+\end{itemize}
+
+In other words, don't railroad your players but do respect the logic of the story world, the fiction. Don't pre-write a story that ignores them effecting the world and don't space out or make them grind for the cool moments `just beacuse it feels like they haven't worked hard enough.' It can be a weird tempation as a GM, perhaps becuase the creativity required can feel tiring and you just want them to roll grinding dice checks for 15 min while you take a break. We'll cover techniques to help avoid that tiring feeling in the GM principles section.
 
 \section{GM Principles}
 \begin{itemize}
-\item sprinkle evocative details everywhere 
-\item make the world seem real
-\item name everyone, make everyone human
-\item build a bigger world through play
-\item create interesting dilemmas not interesting plots
-\item address yourself to the characters not players
-\item be a fan of the players characters
-\item destroy your creations, don't protect them.
-\item make your move but misdirect
-\item make your move, but never speak its name
-\item ask provocative questions and build on the answers 
-\item sometimes, reflect a question back upon the players 
-\item think off screen too
+\myitem sprinkle evocative details everywhere 
+\myitem make the world seem real
+\myitem name everyone, make everyone human
+\myitemend build a bigger world through play
+\myitem create interesting dilemmas not interesting plots
+\myitem address yourself to the characters not players
+\myitem be a fan of the players characters
+\myitemend destroy your creations, don't protect them.
+\myitem make your move but misdirect
+\myitem make your move, but never speak its name
+\myitem ask provocative questions and build on the answers 
+\myitem sometimes, reflect a question back upon the players 
+\myitemend think off screen too
 \item + Additional from the theme (see Theme Deconstruction section)
 \end{itemize}
 Rewrite these to suit your genre. An example is "Barf Forth Apocalyptica" replacing "sprinkle evocative details everywhere." The word choice isn't critical, but you want to tone of the writing to help get the GM in the mood.\footnote{"getting you in the mood" is why I think Apocalypse  World calls the Games Master the Master Of Ceremonies. You are not about controlling the situation. You are about introducing each player character as an act that gets their own time in the spotlight and keeping the show moving.}
 
+It may seem weak that the GM principles are so similar between different genre games and experiences, but that's becuase the first four are about world building, the next four are about managing your ego (MC, not GM!) and the last five are about ways to improvise that aren't as tiring as thinking up a plausible monster biology every five minutes. The final one of course, will vary with theme.
+
+I am not going to go into a deep explanation of them all here, as I am kind of assuming you've played a few PBTA games before trying to write one. If you really need help, buy and read Apocalypse World as it has a strong guide with many examples of getting it right, or how to correct if you feel you have got it wrong.
+
 \section{GM moves}
 \begin{itemize}
-\item give them a difficult decision to make
-\item tell them the possible consequences and ask
-\item Use a front or threat move
-\item Offer an opportunity, with or without a cost
-\item Turn a failed move back on them
-\item Offer Stuff that's painfully expensive but good
-\item Put the spotlight on someone
-\item seperate them
-\item Put them together 
-\item make thier lives complicated now
-\item use up their resources 
-\item activate stuff's bad side
-\item + Additional from the theme (see Theme Deconstruction section)
+\myitem put the spotlight on someone
+\myitem seperate them
+\myitem put them together 
+\myitemend make their lives complicated now
+\myitem give them a difficult decision to make
+\myitem offer an opportunity, with or without a cost
+\myitemend offer stuff that's painfully expensive but good
+\myitem tell them the possible consequences and ask
+\myitem turn a failed move back on them
+\myitem use up their resources 
+\myitemend activate stuff's bad side
+\myitem use a front or threat move
+\myitemend + Additional from the theme (see Theme Deconstruction section)
 \end{itemize}
 
+In the same way, I am not going into detail the GM moves or how to use the standard ones. The first four moves are about ways to move player characters about. There's no reason to have them all in the same place or working in perfect agreement all the time. Think of the beautiful jump-cuts of a heist movie where a team, seperated, work together versus the intimate sqaubbling of a sitcom. It's something that many players have been trained out of or picked from cultural osmosis (never split the party!), and the onus is on you to suffle them around to keep their characters uncomfortable and the players grinning.
+The next four moves are all about giving your player's agency, opportunities to make meaningful decisions. My favourite one I eve managed was a cyberpunk game where the player was hanging off a crashed skyrail. ``You see someone tumbling owards you, that tough with a hook hand prostethic. You can try to grab him as he goes past , but you can't quite be sure which of his flailing hands you'll get. Otherwise he's a deadman. What do you do?'
+This has obvious overlaps too with the next four items: setting up clear consquences. Generally, players won't mind horrific consequences if they knew the risk going in. ``you fail to close the portal, in fact it rips wide open, it's now far to wide for just the three of you to stop anyone coming out.'' In this vein, reminding them that stuff has a abd side makes it seem less arbitary when you activate it. ``If you use grenades here, you risk destablising the whole reactor.'' This also blurs back into ``Tell the consquences and ask''.  The level of overlpa here is your friend, don't get to worried about the specific move. Just stab your finger on the list somehwhere and do that.
+The last two items are going to be more specific to your story, genre, setting and theme. They are in fact your primary ways as a GM (rather then game designer) to bring the theme out.  Even if the enemy is as simple as a Giant Rat, the threat move it comes with should be different in a cyberpunk game and a low-fantasy one. What should each be?
+
 \section{Playbooks}
-WIP
-\subsection{Anatomy of a move}
+I normally aim for 6 to 12 playbooks, or do without them altogether. If you do that, then you can either let  players pick from a common list of moves (Class Warfare for Dungeon World), have only shared basic moves (World of Dungeons), or use only custom moves awarded in response to player actions in that session or the previous session (Experimental, but could work?).
+
+Generally speaking I adivse using playbooks. As a designer they make it easier to balance characters and helps keep the game more genre aligned and thus produce stories that feel like the table is working together to tell it. For the player, a playbook lessens the amount of infomation to process before making those first choices and gives you an easy to understand initial role in the story. Confident players make moves.
+Why six to twelve? You want to give the last player to choose some choice, espcially if they (or you) don't like two or more of the same playbook. I suggest you aim for everyone to have different playbooks as it feels more `special' for the player to have something no-one else can do. 
+If you are having playbooks then there's a bunch of ways you can space them out.  The first is by writing down archetypes of the genre (so in Film Noir we have the Detective, the Mobster, the Suit, the Femme, the Rival Cop, and then, playing on the genre time period and theme of guilt, maybe the Priest, the War Hero, the Waif, the Outsider). 
+I like to do that as a first sketch. If I am using stats I'll write down a list of primary and secondary stats (eg Aa Ab Ac, Ba, Bb, Bc, Ca Cb Cc) and try to fix archetypes to it and fill the gaps. If you treat them as primary and secondary, then for N stats you get N squred slots (three stats is nine playbooks, four stats is sixteen). If you drop doubles that takes you to six and twelve respectively. If you keep doubles but instead treat Ab and Ba as the same then you get six and ten playbooks respectively (4+3+2+1). It's satsisfying lonely fun. 
+If I have other mechanics live in the game I might do the list with that. Cyber\_peripherals, for example, is about Gangs, Holdings, Favours and Cybermods, and each of those things is important enough to be in the core rules. I wasn't going to have sixteen playbooks. So the list started Gangs-gangs, Gangs-Holdings (the goon), Gangs-favours (the charity worker)ect, but I didn't fill in all the slots, just enough to represent everything in most four player games.
+
+Then I'll along the list and assign the playbook a GM goody. Something the playbook brings to the table that helps the GM.
+
+\begin{itemize}
+\item start of session momemtum triggers eg resource shortages
+\item Cast of NPCs  eg regular customers
+\item cataliser of conflict eg Gunlugger
+\item expand map eg Driver
+\item Instigate threat eg Vampire Hunter
+\item fixed point to defend/orbit eg Hardholder
+\item need for supplies eg Savvyhead
+\item supports risky play eg Angel (medic)
+\item countdown urgency eg Vampire
+\item broadcast npc motivations eg observent\footnote{broadcasting motivations even to a single player normally means all other players hear it, and it helps bring the world to life a little more for everyone}
+\item Mostly obediant entity eg Beast-master
+\end{itemize}
+
+Why go to this effort? It makes writing moves easier. If I know this playbook is about the Detective archetype, that it's primary stat is Street and secondary is Smarts and it engages with the Clue mechanic but not the Guilt or Resources mechanics, and brings the Start of Session goody for the GM, then I've got a good lead. You can do the same spacing out exercise inside the playbook too. 
+
+Lets say for the inital draft the Detective starts with one Street move and one start of session Clue move, and has options to learn another two Street moves (three total for primary), two Smarts moves and one more Clue move. That's seven moves which is a good set, often more then Apocalyspe World playbooks get. Dungeon World by contrast, will often hit fifteen or more since frequent levelling up is a core part of the Hero's Jounry theme. 
+What are three characters should this playbook be able to build? The crumpled, world weary but insightful genius, the hardboiled ex cop simmering with anger, the flawed but charming (and patient) interrogator. The crow, the bull and the spider.
+Lets give the Crow the second Clue move (something to do with last minute insight?) and give the Bull and the Spider aspects one move each for Street and Smarts. Of course a player might mix those up and decide to focus on all the Smarts moves, or even, if you allow the option, learn a move from the Femme book and specialise in uncovering details in realtionships. Building in a way to allow a move to be learnt from a different playbook goes a long way to allowing players to explore the exact character they are playing. It works as long as the playbooks are spaced enough to prevent `obvious' choices.
+ 
+The trick with this of approach is to constrain it just enough that as designer you can only see one obvious answer, not to give you a headache trying to fit some arbitary, impossibly difficult combination together. 
+When writing some hacks, I might generate each move for the playbook randomly, trusting to clumpiness to give each playbook an emergent theme. 
+ 
+ \subsection{Anatomy of a move}
 WIP
 
 \section{ Development}
