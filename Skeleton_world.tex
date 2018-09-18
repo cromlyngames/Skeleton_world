@@ -22,10 +22,22 @@
 %for fancy lists
 \usepackage{tikz}
 \usetikzlibrary{shadows}
-\newcommand{\mylist}{\tikz[overlay]\draw(-.2,-.2)--(-.2,.4) [path fading=east](-.2,.15)--(.1,.15);} %adds the |- shape to the start of each list item
-\newcommand{\mylistend}{\tikz[overlay]\draw(-.2,.15)--(-.2,.4) [path fading=east](-.2,.15)--(.1,.15);} %adds the |- shape to the start of each list item
+\newcommand{\mylist}{\tikz[overlay]\draw(-.2,-.2)--(-.2,.5) [path fading=east](-.2,.15)--(.1,.15);} %adds the |- shape to the start of each list item
+\newcommand{\mylistend}{\tikz[overlay]\draw(-.2,.15)--(-.2,.5) [path fading=east](-.2,.15)--(.1,.15);} %adds the |- shape to the start of each list item
 \newcommand{\myitem}{\item[\mylist]} %defines the scope of the mylist command to be 2nd level sublists
 \newcommand{\myitemend}{\item[\mylistend]} %defines the scope of the mylist command to be 2nd level sublists
+
+% Typesets the font size, leading, and measure in the form of 10/12x26 pc.
+\newcommand{\measure}[3]{#1/#2$\times$\unit[#3]{pc}}
+
+% Macros for typesetting the documentation
+
+% Generates the index
+\usepackage{imakeidx}
+%\makeindex[name=moves, title={Index of moves}] % on reflection, not needed. 
+\makeindex[name=stuff, title ={Index of elements, items}]
+\makeindex % general index for playbooks and stuff
+
 
 
 % Standardize command font styles and environments
@@ -246,7 +258,7 @@ In other words, don't railroad your players but do respect the logic of the stor
 \myitem ask provocative questions and build on the answers 
 \myitem sometimes, reflect a question back upon the players 
 \myitemend think off screen too
-\item + Additional from the theme (see Theme Deconstruction section)
+\myitemend + Additional from the theme (see Theme Deconstruction section)
 \end{itemize}
 Rewrite these to suit your genre. An example is "Barf Forth Apocalyptica" replacing "sprinkle evocative details everywhere." The word choice isn't critical, but you want to tone of the writing to help get the GM in the mood.\footnote{"getting you in the mood" is why I think Apocalypse  World calls the Games Master the Master Of Ceremonies. You are not about controlling the situation. You are about introducing each player character as an act that gets their own time in the spotlight and keeping the show moving.}
 
@@ -285,7 +297,13 @@ Generally speaking I advise using playbooks. As a designer they make it easier t
 Why six to twelve? You want to give the last player to choose some choice, especially if they (or you) don't like two or more of the same playbook. I suggest you aim for everyone to have different playbooks as it feels more `special' for the player to have something no-one else can do. That connection is the start of the dice rolls meaning stakes.
 If you are making playbooks then there's a bunch of ways you can space them out.  The first is by writing down archetypes of the genre (so in Film Noir we have the Detective, the Mobster, the Suit, the Femme, the Rival Cop, and then, playing on the genre time period and theme of guilt, maybe the Priest, the War Hero, the Waif, the Outsider). 
 
-\subsection{sketching playbooks}
+Next I'll start sketching out the character creation bits before getting too hung up on moves. 
+As a player, I like the choose an option list approach in playbooks, as they tend to keep me on theme and provide seeds to get started quickly. My current recepie for these is five finished options, three rule based options and one blank to allow those who really want to to fill it in themselves (giving them a sense of ownership). \footnote{For example. Choose a Name: Fizzok, Hardcrust, Bluebell, Edbanger, Sappo, a flowery name, a punky name, a stolen name, \_\_\_\_\_\_\_}  The type of things chosen don't have to match between playbooks. Generally speaking I recommend following Vincent and Megeuy Baker's approach in Apocalypse World and basing phraseology around `appearance' and not `actuality'. 
+
+Give people some starting equipment, and questions to ask other players. It helps tell those other players a lot about this one, and the answers can be used to get things moving from the start.
+
+
+\subsection{sketching playbooks mechanically}
 I like to do that as a first sketch. If I am using stats I'll write down a list of primary and secondary stats (eg Aa Ab Ac, Ba, Bb, Bc, Ca Cb Cc) and try to fix archetypes to it and fill the gaps. If you treat them as primary and secondary, then for N stats you get N squared slots (three stats is nine playbooks, four stats is sixteen). If you drop doubles that takes you to six and twelve respectively. If you keep doubles but instead treat Ab and Ba as the same then you get six and ten playbooks respectively (4+3+2+1). It's satisfying lonely fun. 
 
 If I have other mechanics live in the game I might do the first sketch list with that. Cyber\_peripherals, for example, is about Gangs, Holdings, Favours and Cybermods, and each of those things is important enough to be in the core rules. I wasn't going to have sixteen playbooks. So the list started Gangs-gangs, Gangs-Holdings (the goon), Gangs-favours (the charity worker)ect, but I didn't fill in all the slots, just enough to represent everything in most four player games.
@@ -366,24 +384,61 @@ These may look familar from before. They can work well for individual moves to e
 \item mostly obedient entity
 \end{itemize}
 
-Let's look at that Detective starting Street Move. I roll on the lists randomly:
-When you do something related to (speciality) bonus. Bonus is juicy list. Prompt is Countdown Urgency.
+Let's look at that Detective starting Street Move. I roll on the lists above randomly:
+When you do something related to (speciality) bonus. Bonus is juicy list. Prompt is Countdown Urgency. I interperet that as:
 
 When you take on a new case, Roll+Street
 On a 10+ choose two, On a 7-9 choose two, but one will be lost soon.
 \begin{itemize}
-\myitem you have a good informant
-\myitem you get paid half up front
-\myitem you see a link to another case
+\myitem you know you have an informant good for this
+\myitem you get a cash down payment up front
+\myitemend you see a link to another case
 \end{itemize}
 
+Lets roll again for the Clue starting move\footnote{my initial thought before rolling was ``If there is a clue token at stake in this scene, you have a hunch it is available.\\ It is short and engages the theme, but feels like it'd result in a frustrated player as much as a frustrated detective character.''}
+
+You have a (thing). when applicable it adds two bonuses. Bonus of reroll a fail, Prompt of catalyser of conflict . Extra bonus of get knowledge.
+
+You have a stained, run-down office you can barely afford. Choose one thing it has: Fire-escape to alley; loyal secretary called Dolores, filing cabinet with years of neat notes and newspaper clippings.
+When you spend the night there, you can anyone ask one question for each Clue token you hold, as though you are back there at the scene. When you act aggressively on the answers, you can reroll the first failed roll. \footnote{it's certainly thematic, might need editing to be a little shorter and tighter, and will need play testing to ensure it's not a spotlight hog}
+
+In the example above I decided which moves had a roll and which didn't. In my experience so far, about one in  ten of the moves won't survive initial playtesting and will be replaced by something else entirely. This is an inital draft to get you to the table as fast as possible. Again, while I like the rolling method to get me beyond the obvious and avoid playbooks with 14 moves keyed to tiny moments of violence. It's a device to help, not block you completely. If a combination feels truely unworkable, or Lady Luck has given you nothing but information gathering moves, adjust them! The random generators can be pushed further too - write down the dozen or so player character archetypes, write down four specialities and two `things' of each archetype, assign each playbook a mix of two archetypes and roll up a speciality or a thing if the move uses it. 
 
 \section{ Development}
-WIP
+Development is the mechanic and rules system that governs how players can develop their characters.\footnote{If you are writing a one shot game, you probably don't need this. }
+It is a mechanic that changes often between different PBTA hacks, indicating that no-one has found a solution that everyone else is happy with. It's a perennial favourite topic for discussion, perhaps because it  ties so closely into the hopes, desires and sense of entitlement of players.
+
+\subsection{Simple models}
+The simplest model of all is no mechanical development. In that case players start with a `complete' character, and any development occurs in the fiction (acquiring contacts, loot, relationships, exotic pets ect). An example (outside PBTA) is Traveller - where the genre setting of you all playing crusty middle aged `professionals' with a ship sized mortgage to feed means that `static' character skill sets fit the genre. Using this method  focuses player development urges into the fiction and reduces mechanical complexity. It reduces how complex a playbook can be be (since you don't want to overwhelm someone with a dozen things to memorise right at the start) and dosen't give a player an escape route to develop the playbook more into their style. 
+
+The next simplest is session levelling, where you get an upgrade at the end of every session or every two sessions. This can feel arbitrary and unsatisfying because you don't have to `work for it'. It is easy to implement, and to be honest most games try and calibrate for this speed of development anyway. 
+
+Milestone levelling is another option, where you `level up' after hitting some longer term arc/project. The Savvyhead in Apocalypse World kind of does this by default - as they complete projects, the MC will often give them a custom move that ties into that gear. The limits with this method is that is suits a team game with a shared goal much more then players at cross purposes. You really don't want to put the gm in a position where they have to make calls that will let one player milestone up and block another. That kind of bleed does not feel like a good thing at the end of the session.  I think Nightwitches uses it as it suits the mission based, team based nature of the setting.
+
+\subsection{XP models}
+Most PBTA games use XP points, with normally a few different things feeding into your XP total. I am fairly neutral on these. Pick whatever drives thematic behaviour.
+
+Dungeon World and Monster of the Week gives you XP on a `failed' roll.
+They both give you `top up' xp if you can successfully answer three thematic questions at the end of session\footnote{ie did you find treasure, explore the world, learn something new ect}.
+The Sprawl plays against the team dynamic, and offers XP when you follow personal directives that put the group at risk.
+Apocalypse Word gives you XP when you max out and reset your relationship stat with someone. Dungeon World does something similar with bonds. 
+World of Adventure has adopted Keys - which give small XP when triggered and big XP when completed and replaced\footnote{Ie Key of the Merchant \\ Gain 1Xp when you negotiate a trade that makes profit by the end of session \\ Buyoff: 3xp and change key When you refuse to part with something at any price}
+Apocalypse World also gives you XP when you roll with a highlighted stat. Twist is that other players choose the highlight as a hint what they'd like to see at the table. 
+
 \section{Scenario Moves}
-WIP
+This is a way of bulking out the basic moves to keep them from getting boring, without asking your players to memorise a ton of moves right at the very start of the game.
+The sprawl uses these to cover less commonly occurring, but thematically very important situations in the cyberpunk stories - getting the job, dying and getting cybermods. Sometimes in that order.
+Apocalypse World uses them to cover complicated motorcade warfare without relying on a single basic move all the time. 
+Dungeon World could perhaps benefit from a `Scouting mission' scenario move set covering falling, sneaking, climbing, drowning ect.
+
 \section{Inserts}
-WIP
+These are a different way of handling complex `modules' of rules that are not moves. Dungeon World uses them for Pet Familiars. Apocalypse World uses them for gangs and vehicles. They are literally a self contained page of rules that you can append to a playbook to handle something special. 
+You know the Driver starts with a special vehicle, but it is easy to see how many player characters may acquire one during play and need to insert the rules for their whiskey powered motorbike into their play book.
+
+If you want to free a specific thing from a playbook archetype, or in playtesting people keep insisting on owning a particular thing/gang/pet -  an insert may be the way forward! 
+Like a playbook, I suggest a mix of fixed options and thematic rules for name, appearance, personality traits or predictable behaviour when the player rolls a fail. A few explicit ways for the player to upgrade the insert are also good. 
+
+
 \section{Tags}.
 WIP
 \section{Theme Deconstruction}
