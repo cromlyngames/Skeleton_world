@@ -7,7 +7,7 @@ A tufte latex document -  see(download) the pdf file for the complied formatted 
 Provided under:
 Attribution-NonCommercial CC BY-NC
 This license lets you remix, tweak, and build upon this work non-commercially, and although  new works must also acknowledge Skeleton World and be non-commercial, you don’t have to license their derivative works on the same terms. - 
-## I intend you that you can use Skeleton_World to build a hack and sell it. 
+## I intend that you that you can use Skeleton_World to build a hack and sell it. 
 
 
 # Creative Commons Attribution-NonCommercial 4.0 International Public License
